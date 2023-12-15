@@ -1,0 +1,89 @@
+{
+    "editor.formatOnSave": false,
+    "editor.maxTokenizationLineLength": 2000000,
+    "files.autoSave": "onFocusChange",
+    "search.showLineNumbers": true,
+    "editor.inlineSuggest.showToolbar": "always",
+    "editor.quickSuggestionsDelay": 10,
+    "editor.quickSuggestions": {
+        "other": "inline",
+        "comments": "on",
+        "strings": "on"
+    },
+    "Lua.diagnostics.groupFileStatus": {
+        "ambiguity": "Any",
+        "await": "Any",
+        "duplicate": "Any",
+        "global": "Any",
+        "luadoc": "Any",
+        "redefined": "Any",
+        "strict": "Any",
+        "type-check": "Any",
+        "unbalanced": "Any",
+        "unused": "Any"
+    },
+    "Lua.diagnostics.severity": {
+        "redefined-local": "Warning"
+    },
+    "Lua.diagnostics.disable": [
+        "close-non-object",
+        "incomplete-signature-doc",
+        "missing-global-doc",
+        "missing-local-export-doc",
+        "param-type-mismatch"
+    ],
+    "Lua.diagnostics.ignoredFiles": "Disable",
+    "Lua.diagnostics.libraryFiles": "Disable",
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.runtime.plugin": "/root/ESOUI HavokScript Support/.vscode/plugin.lua",
+    "Lua.workspace.library": [
+        "/root/ESOUI HavokScript Support/.vscode/",
+        "/root/ESOUI HavokScript Support/enum.lua",
+        "/root/ESOUI HavokScript Support/eso-api.classes.lua",
+        "/root/ESOUI HavokScript Support/eso-api_base_Manual_NonGenerated.lua",
+        "/root/ESOUI HavokScript Support/eso-api_events.lua",
+        "/root/ESOUI HavokScript Support/eso-api_game.lua",
+        "/root/ESOUI HavokScript Support/eso-api_globals.lua",
+        "/root/ESOUI HavokScript Support/eso-api_object_userdata.test.lua",
+        "/root/ESOUI HavokScript Support/eso-api_userdata.lua",
+        "/root/ESOUI HavokScript Support/eso-control.lua",
+        "/root/ESOUI HavokScript Support/esoui-types.lua",
+        "/root/ESOUI HavokScript Support/forvscode.lua",
+        "/root/ESOUI HavokScript Support/main.lua",
+        "/root/ESOUI HavokScript Support/StackTracePlus.lua",
+        "/root/ESOUI HavokScript Support/test.lua",
+        "/root/ESOUI HavokScript Support/WindowManager.lua",
+        "/root/ESOUI HavokScript Support/XML.lua",
+        "/root/ESOUI HavokScript Support/esoui/app/",
+        "/root/ESOUI HavokScript Support/esoui/appandingame/",
+        "/root/ESOUI HavokScript Support/esoui/common/",
+        "/root/ESOUI HavokScript Support/esoui/fontdefs/",
+        "/root/ESOUI HavokScript Support/esoui/fontstrings/",
+        "/root/ESOUI HavokScript Support/esoui/ingame/",
+        "/root/ESOUI HavokScript Support/esoui/ingamelocalization/",
+        "/root/ESOUI HavokScript Support/esoui/internalingame/",
+        "/root/ESOUI HavokScript Support/esoui/internalingamelocalization/",
+        "/root/ESOUI HavokScript Support/esoui/lang/",
+        "/root/ESOUI HavokScript Support/esoui/libraries/",
+        "/root/ESOUI HavokScript Support/esoui/overlay/",
+        "/root/ESOUI HavokScript Support/esoui/pregame/",
+        "/root/ESOUI HavokScript Support/esoui/pregameandingame/",
+        "/root/ESOUI HavokScript Support/esoui/pregameandinternalingame/",
+        "/root/ESOUI HavokScript Support/esoui/pregamelocalization/",
+        "/root/ESOUI HavokScript Support/esoui/publicallingames/",
+        "/root/PerfectPixel/"
+    ],
+    "Lua.runtime.special": {
+        "require": "require"
+    },
+    "Lua.workspace.maxPreload": 20000,
+    "Lua.workspace.preloadFileSize": 20000,
+    "Lua.workspace.checkThirdParty": true,
+    "Lua.type.castNumberToInteger": true,
+    "Lua.typeFormat.config": {
+        "format_line": "false"
+    },
+    "Lua.misc.parameters": [
+        "--develop=true"
+    ]
+}

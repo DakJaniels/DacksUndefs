@@ -1,0 +1,12 @@
+; This add-on is not created by, affiliated with or sponsored by ZeniMax
+; Media Inc. or its affiliates. The Elder Scrolls® and related logos are
+; registered trademarks or trademarks of ZeniMax Media Inc. in the United
+; States and/or other countries. All rights reserved.
+
+## Title: Dacks Undefined Globals Catcher
+## Author: @dack_janiels[NA]
+## APIVersion: 101040 101041
+## DependsOn: LibMsgWin-1.0>=11
+## Description: Debugging utility that reports failed _G lookups. It can help you track UI errors like "12345678901234567890:1: attempt to index a nil value"
+
+DacksUndefinedGlobalsCatcher.lua

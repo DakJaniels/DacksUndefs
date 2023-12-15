@@ -1,0 +1,34 @@
+{
+  "version": "0.2",
+  "language": "en,en-US,lorem",
+  "enableFiletypes": [
+    "lua",
+    "xml",
+    "log"
+  ],
+  "ignoreRegExpList": [
+    "\\((.+?)\\)"
+  ],
+  "ignorePaths": [],
+  "words": [
+    "Callstack",
+    "dack",
+    "Dacks",
+    "DUGCW",
+    "DUGCWL",
+    "DUGCWLBG",
+    "ESOUSERDATATYPE",
+    "frexp",
+    "getfenv",
+    "globalmiss",
+    "janiels",
+    "libmw",
+    "msgwin",
+    "oldminor",
+    "slcmds",
+    "strsub",
+    "undefs",
+    "userdata",
+    "Zeni"
+  ]
+}
