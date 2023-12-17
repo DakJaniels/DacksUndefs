@@ -1,3 +1,4 @@
+---@diagnostic disable: 113
 local LIB_NAME, VERSION = "LibMsgWin-1.0", 1.11
 if _G[LIB_NAME] ~= nil and (_G[LIB_NAME].version and _G[LIB_NAME].version >= VERSION) then return end
 
@@ -6,7 +7,7 @@ local lib, oldminor = {}, VERSION
 lib.debug = false
 lib.name = LIB_NAME
 lib.version = oldminor
-
+---@class LibMsgWin-1.0
 LibMsgWin = lib
 
 --- Adjusts the slider based on the buffer's properties.
@@ -44,14 +45,14 @@ end
 --- Creates a message window.
 ---@param _UniqueName string The unique name for the window.
 ---@param _LabelText string The label text for the window.
----@param _FadeDelay number The fade delay for the window.
----@param _FadeTime number The fade time for the window.
+---@param _FadeDelay? number The fade delay for the window.
+---@param _FadeTime? number The fade time for the window.
 ---@return object tlw The created message window.
 function lib:CreateMsgWindow(_UniqueName, _LabelText, _FadeDelay, _FadeTime)
     -- Dimension Constraints
     local minWidth = 200
     local minHeight = 150
-
+---@type ESOUSERDATATYPE
     local tlw = WINDOW_MANAGER:CreateTopLevelWindow(_UniqueName)
     tlw:SetMouseEnabled(true)
     tlw:SetMovable(true)

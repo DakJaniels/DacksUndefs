@@ -30,7 +30,8 @@
         "incomplete-signature-doc",
         "missing-global-doc",
         "missing-local-export-doc",
-        "param-type-mismatch"
+        "param-type-mismatch",
+        "redundant-parameter"
     ],
     "Lua.diagnostics.ignoredFiles": "Disable",
     "Lua.diagnostics.libraryFiles": "Disable",
@@ -71,14 +72,15 @@
         "/root/ESOUI HavokScript Support/esoui/pregameandinternalingame/",
         "/root/ESOUI HavokScript Support/esoui/pregamelocalization/",
         "/root/ESOUI HavokScript Support/esoui/publicallingames/",
-        "/root/PerfectPixel/"
+        "/root/PerfectPixel/",
+        "/root/.vscode-server-insiders/data/User/globalStorage/sumneko.lua/addonManager/addons/lldebugger/module/library"
     ],
     "Lua.runtime.special": {
         "require": "require"
     },
     "Lua.workspace.maxPreload": 20000,
     "Lua.workspace.preloadFileSize": 20000,
-    "Lua.workspace.checkThirdParty": true,
+    "Lua.workspace.checkThirdParty": false,
     "Lua.type.castNumberToInteger": true,
     "Lua.typeFormat.config": {
         "format_line": "false"
