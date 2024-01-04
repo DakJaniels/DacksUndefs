@@ -1,8 +1,0 @@
-{
-    "lua.version": "lua5.1",
-    "source": [
-        {
-            "dir": "./"
-        }
-    ]
-}
