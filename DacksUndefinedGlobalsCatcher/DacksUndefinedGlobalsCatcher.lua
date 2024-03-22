@@ -1,3 +1,6 @@
+---@class DacksUndefinedGlobalsCatcher
+---@field Name string
+---@field msgwin LibMsgWin|userdata
 local addon = {
     Name = 'DacksUndefinedGlobalsCatcher',
     msgwin = nil
@@ -18,7 +21,7 @@ local zo_abs = _G.zo_abs
 local math_frexp = _G.math and _G.math.frexp
 local reported = {}
 setmetatable(reported, {
-    __index = function ()
+    __index = function()
         return 0
     end
 })
@@ -97,6 +100,9 @@ local ignoreGlobals = {
     'g_currentPlayerUserId',
 }
 
+---Create a lookup table for the ignore list
+---@param ignoreList table
+---@return table
 local function createIgnoreLookup(ignoreList)
     local lookup = {}
     for _, v in ipairs(ignoreList) do
@@ -107,19 +113,30 @@ end
 
 local ignoreLookup = createIgnoreLookup(ignoreGlobals)
 
+---Format the message
+---@param formatStr string
+---@param reportedKey number
+---@param key any
+---@param traceback string
+---@param functionNames table
+---@return string
 local function formatMessage(formatStr, reportedKey, key, traceback, functionNames)
     local callStackInfo = '|c0000FFCall stack|r:\n'
     for i, functionName in ipairs(functionNames) do
-        callStackInfo = callStackInfo..string_format('%d. %s\n', i, functionName)
+        callStackInfo = callStackInfo .. string_format('%d. %s\n', i, functionName)
     end
-    local message = string_format(formatStr, reportedKey, key)..'\n'..traceback..'\n'..callStackInfo
+    local message = string_format(formatStr, reportedKey, key) .. '\n' .. traceback .. '\n' .. callStackInfo
     return message
 end
 
+---Toggle the message window
 local function toggleMsgWindow()
     addon.msgwin:ToggleHidden()
 end
 
+---Global miss handler
+---@param _ any
+---@param key any
 local function globalmiss(_, key)
     -- Check if the key is in the ignore list or starts with certain prefixes
     if not key or ignoreLookup[key] or zo_strsub(key, 1, 1) == '_' or zo_strsub(key, 1, 2) == 'ZO'
@@ -135,12 +152,14 @@ local function globalmiss(_, key)
         return
     end
     local formatStr = type(key) == 'string' and '%3dx %q' or '%3dx %s'
-    local traceback = debugTraceback('|cFF0000Undefined global|r:'..key, 2)
+    local traceback = debugTraceback('|cFF0000Undefined global|r:' .. key, 2)
     local functionNames = ZO_GetCallstackFunctionNames(1) -- Exclude the current function
     local message = formatMessage(formatStr, reported[key], key, traceback, functionNames)
     addon.msgwin:AddText(message)
 end
 
+---@param eventCode number
+---@param addOnName string
 local function onLoad(eventCode, addOnName)
     if addOnName ~= addon.Name then
         return

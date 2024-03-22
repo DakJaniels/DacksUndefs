@@ -40,9 +40,9 @@
     "Lua.diagnostics.ignoredFiles": "Disable",
     "Lua.diagnostics.libraryFiles": "Disable",
     "Lua.runtime.version": "Lua 5.1",
-    "Lua.runtime.plugin": "/home/dack_janiels/vscode-eso/.vscode/plugin.lua",
+    "Lua.runtime.plugin": "/home/dack_janiels/esoui_live/plugin/plugin.lua",
     "Lua.workspace.library": [
-        "/home/dack_janiels/vscode-eso/"
+        "/home/dack/esoui_live/"
     ],
     "Lua.runtime.special": {
         "require": "require"
