@@ -27,7 +27,6 @@ setmetatable(reported, {
 })
 
 local ignoreGlobals = {
-    'ActionButtonDecoration',
     'ActionButton1Decoration',
     'ActionButton2Decoration',
     'ActionButton3Decoration',
@@ -51,14 +50,29 @@ local ignoreGlobals = {
     'ActionButton21Decoration',
     'ActionButton22Decoration',
     'ActionButton23Decoration',
+    'ActionButtonDecoration',
     'AdvancedFilters',
     'BRACKET_COMMANDS',
+    'BUI',
     'ComparativeTooltip1Divider1',
-    'ComparativeTooltip2Divider1',
     'ComparativeTooltip1SellPrice2',
+    'ComparativeTooltip2Divider1',
     'ComparativeTooltip2SellPrice2',
+    'FyrMM',
+    'g_currentPlayerName',
+    'g_currentPlayerUserId',
     'GridList',
-    'QuickslotButtonDecoration',
+    'IIfA',
+    'InventoryGridView',
+    'ITEM_TRAIT_TYPE_SPECIAL_STAT',
+    'ItemTooltipCondition',
+    'ItemTooltipDivider1',
+    'ItemTooltipEquippedInfo',
+    'ItemTooltipSellPrice1',
+    'ItemTooltipSellPrice2',
+    'NOTIFICATION_ICONS_CONSOLE',
+    'PREVIEW_UPDATE_INTERVAL_MS',
+    'PULSES',
     'QuickslotButton1Decoration',
     'QuickslotButton2Decoration',
     'QuickslotButton3Decoration',
@@ -82,22 +96,46 @@ local ignoreGlobals = {
     'QuickslotButton21Decoration',
     'QuickslotButton22Decoration',
     'QuickslotButton23Decoration',
-    'IIfA',
-    'InventoryGridView',
-    'ItemTooltipDivider1',
-    'ItemTooltipCondition',
-    'ItemTooltipEquippedInfo',
-    'ItemTooltipSellPrice1',
-    'ItemTooltipSellPrice2',
-    'ITEM_TRAIT_TYPE_SPECIAL_STAT',
-    'NOTIFICATION_ICONS_CONSOLE',
-    'PREVIEW_UPDATE_INTERVAL_MS',
-    'PULSES',
+    'QuickslotButtonDecoration',
     'Roomba',
     'SetTrack',
     'WriteToInterfaceLog',
-    'g_currentPlayerName',
-    'g_currentPlayerUserId',
+    'ArkadiusTradeToolsSalesData01',
+    'ArkadiusTradeToolsSalesData02',
+    'ArkadiusTradeToolsSalesData03',
+    'ArkadiusTradeToolsSalesData04',
+    'ArkadiusTradeToolsSalesData05',
+    'ArkadiusTradeToolsSalesData06',
+    'ArkadiusTradeToolsSalesData07',
+    'ArkadiusTradeToolsSalesData08',
+    'ArkadiusTradeToolsSalesData09',
+    'ArkadiusTradeToolsSalesData10',
+    'ArkadiusTradeToolsSalesData11',
+    'ArkadiusTradeToolsSalesData12',
+    'ArkadiusTradeToolsSalesData13',
+    'ArkadiusTradeToolsSalesData14',
+    'ArkadiusTradeToolsSalesData15',
+    'ArkadiusTradeToolsSalesData16',
+    'MM00DataSavedVariables',
+    'MM01DataSavedVariables',
+    'MM02DataSavedVariables',
+    'MM03DataSavedVariables',
+    'MM04DataSavedVariables',
+    'MM05DataSavedVariables',
+    'MM06DataSavedVariables',
+    'MM07DataSavedVariables',
+    'MM08DataSavedVariables',
+    'MM09DataSavedVariables',
+    'MM10DataSavedVariables',
+    'MM11DataSavedVariables',
+    'MM12DataSavedVariables',
+    'MM13DataSavedVariables',
+    'MM14DataSavedVariables',
+    'MM15DataSavedVariables',
+    'ShoppingList',
+    'LibHistoire_NameDictionary',
+    'LibHistoire_GuildNames',
+    'LibHistoire_GuildHistory',
 }
 
 ---Create a lookup table for the ignore list
@@ -125,7 +163,7 @@ local function formatMessage(formatStr, reportedKey, key, traceback, functionNam
     for i, functionName in ipairs(functionNames) do
         callStackInfo = callStackInfo .. string_format('%d. %s\n', i, functionName)
     end
-    local message = string_format(formatStr, reportedKey, key) .. '\n' .. traceback .. '\n' .. callStackInfo
+    local message = string_format(formatStr, reportedKey, key) .. '\n' .. traceback .. '\n' .. callStackInfo .. '\n'
     return message
 end
 
@@ -140,7 +178,9 @@ end
 local function globalmiss(_, key)
     -- Check if the key is in the ignore list or starts with certain prefixes
     if not key or ignoreLookup[key] or zo_strsub(key, 1, 1) == '_' or zo_strsub(key, 1, 2) == 'ZO'
-        or zo_strsub(key, 1, 3) == 'SI_' or zo_strsub(key, 1, 5) == 'FCOIS' then
+        or zo_strsub(key, 1, 3) == 'SI_' or zo_strsub(key, 1, 3) == 'ZO_' or zo_strsub(key, 1, 3) == 'LAM' or zo_strsub(key, 1, 4) == 'RFTO' or zo_strsub(key, 1, 4) == 'RFTL'
+        or zo_strsub(key, 1, 4) == 'RFTR' or zo_strsub(key, 1, 4) == 'RFTF' or zo_strsub(key, 1, 12) == 'PopupTooltip' or zo_strsub(key, 1, 11) == 'ItemTooltip'
+        or zo_strsub(key, 1, 5) == 'FCOIS' or zo_strsub(key, 1, 14) == 'MasterMerchant' then
         return
     end
     reported[key] = (reported[key] or 0) + 1
